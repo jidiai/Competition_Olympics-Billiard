@@ -5,9 +5,14 @@
 
 Olympics-Billiard is one of the AI-Olympics testbeds built on [`olympics-engine`](https://github.com/jidiai/olympics_engine).  
 Two teams (red and blue) start at one side of the table and on the other side of the table lies a pile of balls in equal numbers of red and blue.
-On four coners there are holes drawn as green line such that the player scores if the ball of its color touch the green line and receive penlity
-if the player itself touch the green line. The game end when reaching maximum step (500 time-step) or when either player manage to hit all the ball
+On four coners there are holes drawn as green lines such that the player scores if the ball of its color touches the line and receive penality
+if the player itself has touched the line. The game end when reaching maximum step (500 time-step) or when either player manage to hit all the ball
 of its color into the hole.
+
+Each player has rectangular view (100x100 matrix) of its surrounding along its current direction. In such a matrix the colors are distinguished by numbers.
+Player can apply force ([-100,200]) to move forward or backward and turn at particular angle ([-30,30] deg). 
+The applied force also costs energy.
+Make sure to plan your torque and keep efficient fuel in the tank.
 
 <img src='./img/billiard_competition_render.gif'>
 
